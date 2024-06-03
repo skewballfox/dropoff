@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropoff Service for %I
+After=network.target
+
+[Service]
+ExecStart={{ .InstallDir }}/bin/dropoff -config {{ .ConfigFile }}
+Restart=always
+
+[Install]
+WantedBy=default.target
